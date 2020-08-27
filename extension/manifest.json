@@ -1,6 +1,6 @@
 {
 
-  "description": "Reverts Facebook's layout to the Old Layout (pre-September 2020) by changing your browser's user-agent string to one not supported by the new layout.",
+  "description": "Revert Facebook to the Old Layout (pre-Sep 2020) by changing your browser's user-agent string to one not supported by the new layout",
   "manifest_version": 2,
   "name": "Old Layout for Facebook",
   "author": "Matt Kruse",
