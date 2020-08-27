@@ -1,1 +1,182 @@
-OldLayout
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Old Layout for Facebook reverts the new layout back to the old!</title>
+    <meta name="og:title" content="Undo Facebook's New Layout!" />
+    <meta name="og:description" content="Old Layout for Facebook reverts the new layout back to the old." />
+    <meta name="og:image" content="https://oldlayout.com/share.png"/>
+
+    <link rel="shortcut icon" href="https://OldLayout.com/favicon.png" />
+    <link href="includes/css/bootstrap.min.css" rel="stylesheet">
+    <link href="includes/css/style.css" rel="stylesheet">
+    <link href="includes/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <script src="includes/js/jquery.js"></script>
+    <script src="includes/js/bootstrap.min.js"></script>
+    <style>
+        .download { display:none; }
+        body.b-all .b-chrome, body.b-chrome .b-chrome { display:block; }
+        body.b-all .b-opera, body.b-opera .b-opera { display:block; }
+        body.b-all .b-firefox, body.b-firefox .b-firefox { display:block; }
+        body.b-all .b-edge, body.b-edge .b-edge { display:block; }
+        body.b-all .showall, body.b-all .identify { display:none; }
+    </style>
+    <script>
+      $(function() {
+        var $body = $('body:first');
+        $body.addClass('js-enabled');
+        if (/[?&]all($|&|=)/.test(document.location.search)) {
+          $body.addClass('b-all');
+        }
+        // Identify the browser (best guess)
+        var b = navigator.userAgent;
+        if (/OPR/.test(b)) {
+          $body.addClass('b-opera');
+        }
+        else if (/Edg/.test(b)) {
+          $body.addClass('b-edge');
+        }
+        else if (/Firefox/.test(b)) {
+          $body.addClass('b-firefox');
+        }
+        else if (window.chrome && /Chrome/.test(b)) {
+          $body.addClass('b-chrome');
+        }
+        else {
+          $body.addClass('b-all');
+        }
+
+      });
+      function showall() {
+        $('body:first').addClass('b-all');
+      }
+    </script>
+</head>
+<body>
+<header class='jumbotron'>
+    <div class='container'>
+        <div class='row'>
+            <div class='span6 text-center'>
+                <img src='includes/img/logo.png' style="border-radius:20px;border:5px solid #ccc;"/>
+            </div>
+            <div class='span6'>
+                <h3 style="color:white;">Undo Facebook's New Layout!</h3>
+                <div class='color-text' style="font-size:larger;margin-bottom:15px;">
+                    <p>Don't like the new Facebook layout?</p>
+                    <p>Been forced into it with no option to go back?</p>
+                    <p>No worries!</p>
+                    <p><b>Old Layout for Facebook</b> forces the site to display the old layout, rather than the new.</p>
+
+                    <div><img src="includes/img/feature_check_white.png"> Simple install - no options to configure</div>
+                    <div><img src="includes/img/feature_check_white.png"> Works everywhere on Facebook.com</div>
+                    <div><img src="includes/img/feature_check_white.png"> Easy to uninstall if you change your mind</div>
+                </div>
+
+                <div class="row download b-firefox">
+                    <div class='hero-unit bg-light'>
+                        <div class='row-fluid'>
+                            <div class='span2 text-center'>
+                                <img src='includes/img/firefox-256.png'/>
+                            </div>
+                            <div class='span10'>
+                                <p><span class="identify">It looks like you're using Firefox. </span>
+                                    Click to install the extension from the official Mozilla Firefox Add-Ons site.
+                                </p>
+                                <div class='text-center'>
+                                    <a href="https://addons.mozilla.org/en-US/firefox/addon/old-layout-for-facebook/" target="_blank" type='button' class='btn btn-primary btn-large'>Install from Mozilla</a>
+                                </div>
+                                <p class="showall" style="text-align:center;margin-top:5px;"><small>You can also <a href="#" onclick="showall();return false;" style="text-decoration:underline;color:white;">view all download supported browsers.</a> </small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row download b-chrome">
+                    <div class='hero-unit bg-light'>
+                        <div class='row-fluid'>
+                            <div class='span2 text-center'>
+                                <img src='includes/img/chrome-256.png'/>
+                            </div>
+                            <div class='span10'>
+                                <p><span class="identify">It looks like you're using Chrome. </span>
+                                    Click to install the extension from the official Google Chrome Web Store.
+                                </p>
+                                <div class='text-center'>
+                                    <a href="https://chrome.google.com/webstore/detail/old-layout-for-facebook/abmkkackbbimmdbfjdilpnfaegaeagge" target="_blank" type='button' class='btn btn-primary btn-large'>Install from Google</a>
+                                </div>
+                                <p class="showall" style="text-align:center;margin-top:5px;"><small>You can also <a href="#" onclick="showall();return false;" style="text-decoration:underline;color:white;">view all download supported browsers.</a> </small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row download b-opera">
+                    <div class='hero-unit bg-light'>
+                        <div class='row-fluid'>
+                            <div class='span2 text-center'>
+                                <img src='includes/img/opera-256.png'/>
+                            </div>
+                            <div class='span10'>
+                                <p><span class="identify">It looks like you're using Opera. </span>
+                                    Click to install the extension from the Google Web Store.
+                                </p>
+                                <div class='text-center'>
+                                    <a href="https://chrome.google.com/webstore/detail/old-layout-for-facebook/abmkkackbbimmdbfjdilpnfaegaeagge" target="_blank" type='button' class='btn btn-primary btn-large'>Install from Google</a>
+                                </div>
+                                <p class="showall" style="text-align:center;margin-top:5px;"><small>You can also <a href="#" onclick="showall();return false;" style="text-decoration:underline;color:white;">view all download supported browsers.</a> </small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row download b-edge">
+                    <div class='hero-unit bg-light'>
+                        <div class='row-fluid'>
+                            <div class='span2 text-center'>
+                                <img src='includes/img/edge-256.png'/>
+                            </div>
+                            <div class='span10'>
+                                <p>
+                                    <span class="identify">It looks like you're using Microsoft Edge.</span>
+                                    Click to install the extension from the Google Web Store.
+                                </p>
+                                <div class='text-center'>
+                                    <a href="https://chrome.google.com/webstore/detail/old-layout-for-facebook/abmkkackbbimmdbfjdilpnfaegaeagge" target="_blank" type='button' class='btn btn-primary btn-large'>Install from Google</a>
+                                </div>
+                                <p class="showall" style="text-align:center;margin-top:5px;"><small>You can also <a href="#" onclick="showall();return false;" style="text-decoration:underline;color:white;">view all download supported browsers.</a> </small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Begin page content -->
+<!--
+<div class="container" >
+
+</div>
+-->
+
+<!-- Footer -->
+<div class='footer' >
+    <div class='container'>
+        <div class='row-fluid text-center'>
+            <ul class='inline'>
+                <li><a href='https://MattKruse.com'>Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6382940-14']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
