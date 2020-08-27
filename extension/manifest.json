@@ -1,0 +1,31 @@
+{
+
+  "description": "Reverts Facebook's layout to the Old Layout (pre-September 2020) by changing your browser's user-agent string to one not supported by the new layout.",
+  "manifest_version": 2,
+  "name": "Old Layout for Facebook",
+  "author": "Matt Kruse",
+  "version": "1.0",
+  "homepage_url": "https://OldLayout.com",
+  "icons": {
+    "32": "icon-32.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "permissions": [
+    "webRequest", "webRequestBlocking", "*://*.facebook.com/*", "*://*.messenger.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["*://*.facebook.com/*"],
+    "css": ["style.css"]
+  }],
+  "page_action": {
+      "default_icon": {
+        "32": "icon-32.png",
+        "48": "icon-48.png"
+      },
+      "default_title": "Old Layout for Facebook"
+    }
+}
