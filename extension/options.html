@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body, html { margin:0; padding: 0; width:200px; height:200px; overflow:hidden; }
+      div { height:20px; margin:5px; width:180px; cursor: pointer; }
+      div.checked { border:1px solid #333; }
+      p { text-align:center; }
+    </style>
+    <script src="options.js"></script>
+  </head>
+<body>
+  <p><b>FB Old Layout</b></p>
+  <div id="enabled" class="checked"><input type="radio" checked="checked" name="enabled" value="true"> Enabled</div>
+  <div id="disabled" ><input type="radio" name="enabled" value="false"> Disabled</div>
+  <div id="msg"></div>
+</body>
+</html>
