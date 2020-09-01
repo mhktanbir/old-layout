@@ -10,11 +10,11 @@
     <meta property="og:type" content="website"/>
 
     <link rel="shortcut icon" href="https://OldLayout.com/favicon.png" />
-    <link href="includes/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap.css" rel="stylesheet">
     <link href="includes/css/style.css" rel="stylesheet">
-    <link href="includes/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <!--<link href="includes/css/bootstrap-responsive.min.css" rel="stylesheet">-->
     <script src="includes/js/jquery.js"></script>
-    <script src="includes/js/bootstrap.min.js"></script>
+    <!--<script src="includes/js/bootstrap.min.js"></script>-->
     <style>
         .download { display:none; }
         body.b-all .b-chrome, body.b-chrome .b-chrome { display:block; }
@@ -55,13 +55,14 @@
     </script>
 </head>
 <body>
+
 <header class='jumbotron'>
     <div class='container'>
         <div class='row'>
-            <div class='span6 text-center'>
-                <img src='includes/img/logo.png' style="border-radius:20px;border:5px solid #ccc;"/>
+            <div class='col-lg-6 col-12 text-center'>
+                <img src='includes/img/logo.png' style="border-radius:20px;border:5px solid #ccc;margin-bottom:20px;"/>
             </div>
-            <div class='span6'>
+            <div class='col-lg-6 col-12'>
                 <h3 style="color:white;">Undo Facebook's New Layout!</h3>
                 <div class='color-text' style="font-size:larger;margin-bottom:15px;">
                     <p>Don't like the new Facebook layout?</p>
@@ -75,31 +76,28 @@
                     <div><img src="includes/img/feature_check_white.png"> From Matt Kruse, creator of the popular <a style="color:white;text-decoration:underline;" href="https://SocialFixer.com" target="_blank">Social Fixer</a> extension</div>
                 </div>
 
-                <div class="row download b-firefox">
-                    <div class='hero-unit bg-light'>
-                        <div class='row-fluid'>
-                            <div class='span2 text-center'>
-                                <img src='includes/img/firefox-256.png'/>
+                <div class="container download b-firefox hero-unit bg-light">
+                    <div class='row'>
+                        <div class='col-4 text-center'>
+                            <img src='includes/img/firefox-256.png' style="max-width:90%;"/>
+                        </div>
+                        <div class='col-8'>
+                            <p><span class="identify">It looks like you're using Firefox. </span>
+                                Click to install the extension from the official Mozilla Firefox Add-Ons site.
+                            </p>
+                            <div class='text-center'>
+                                <a href="https://addons.mozilla.org/en-US/firefox/addon/old-layout-for-facebook/" target="_blank" type='button' class='btn btn-primary btn-large'>Install from Mozilla</a>
                             </div>
-                            <div class='span10'>
-                                <p><span class="identify">It looks like you're using Firefox. </span>
-                                    Click to install the extension from the official Mozilla Firefox Add-Ons site.
-                                </p>
-                                <div class='text-center'>
-                                    <a href="https://addons.mozilla.org/en-US/firefox/addon/old-layout-for-facebook/" target="_blank" type='button' class='btn btn-primary btn-large'>Install from Mozilla</a>
-                                </div>
-                                <p class="showall" style="text-align:center;margin-top:5px;"><small>You can also <a href="#" onclick="showall();return false;" style="text-decoration:underline;color:white;">view all download supported browsers.</a> </small></p>
-                            </div>
+                            <p class="showall" style="text-align:center;margin-top:5px;"><small>You can also <a href="#" onclick="showall();return false;" style="text-decoration:underline;color:white;">view all download supported browsers.</a> </small></p>
                         </div>
                     </div>
                 </div>
-                <div class="row download b-chrome">
-                    <div class='hero-unit bg-light'>
-                        <div class='row-fluid'>
-                            <div class='span2 text-center'>
-                                <img src='includes/img/chrome-256.png'/>
+                <div class="container download b-chrome hero-unit bg-light">
+                        <div class='row'>
+                            <div class='col-4 text-center'>
+                                <img src='includes/img/chrome-256.png' style="max-width:90%;"/>
                             </div>
-                            <div class='span10'>
+                            <div class='col-8'>
                                 <p><span class="identify">It looks like you're using Chrome. </span>
                                     Click to install the extension from the official Google Chrome Web Store.
                                 </p>
@@ -109,15 +107,13 @@
                                 <p class="showall" style="text-align:center;margin-top:5px;"><small>You can also <a href="#" onclick="showall();return false;" style="text-decoration:underline;color:white;">view all download supported browsers.</a> </small></p>
                             </div>
                         </div>
-                    </div>
                 </div>
-                <div class="row download b-opera">
-                    <div class='hero-unit bg-light'>
-                        <div class='row-fluid'>
-                            <div class='span2 text-center'>
-                                <img src='includes/img/opera-256.png'/>
+                <div class="container download b-opera hero-unit bg-light">
+                        <div class='row'>
+                            <div class='col-4 text-center'>
+                                <img src='includes/img/opera-256.png' style="max-width:90%;"/>
                             </div>
-                            <div class='span10'>
+                            <div class='col-8'>
                                 <p><span class="identify">It looks like you're using Opera. </span>
                                     Click to install the extension from the Google Web Store.
                                 </p>
@@ -127,15 +123,13 @@
                                 <p class="showall" style="text-align:center;margin-top:5px;"><small>You can also <a href="#" onclick="showall();return false;" style="text-decoration:underline;color:white;">view all download supported browsers.</a> </small></p>
                             </div>
                         </div>
-                    </div>
                 </div>
-                <div class="row download b-edge">
-                    <div class='hero-unit bg-light'>
-                        <div class='row-fluid'>
-                            <div class='span2 text-center'>
-                                <img src='includes/img/edge-256.png'/>
+                <div class="container download b-edge hero-unit bg-light">
+                        <div class='row'>
+                            <div class='col-4 text-center'>
+                                <img src='includes/img/edge-256.png' style="max-width:90%;"/>
                             </div>
-                            <div class='span10'>
+                            <div class='col-8'>
                                 <p>
                                     <span class="identify">It looks like you're using Microsoft Edge.</span>
                                     Click to install the extension from the Google Web Store.
@@ -146,7 +140,6 @@
                                 <p class="showall" style="text-align:center;margin-top:5px;"><small>You can also <a href="#" onclick="showall();return false;" style="text-decoration:underline;color:white;">view all download supported browsers.</a> </small></p>
                             </div>
                         </div>
-                    </div>
                 </div>
 
             </div>
@@ -156,21 +149,23 @@
 
 <!-- Begin page content -->
 <div class='container' style="margin-top:20px;">
-    <div class='row-fluid text-center'>
-        <h3>Simply Install and Refresh... like magic!</h3>
-        <img src="screenshot.jpg"/>
+    <div class='row text-center'>
+        <div class="col">
+            <h3>Simply Install and Refresh... like magic!</h3>
+            <img src="screenshot.jpg" style="max-width:95%;"/>
+        </div>
     </div>
 </div>
 
 <div class='container' style="margin-top:20px;">
-    <div class='row-fluid text-center'>
-        <div class="span12">
+    <div class='row text-center'>
+        <div class="col-12">
             <h3>Do you wish Facebook was better? Fix it!</h3>
         </div>
-        <div class="span4">
-            <a href="https://SocialFixer.com" target="_blank"><img src="images/socialfixer.png"></a>
+        <div class="col-12 col-lg-4">
+            <a href="https://SocialFixer.com" target="_blank"><img src="images/socialfixer.png" style="max-width:100%;"></a>
         </div>
-        <div class="span7" style="text-align:left;">
+        <div class="col-12 col-lg-8" style="text-align:left;">
             <p>Social Fixer is another browser extension from the same person that brought you Old Layout. It improves your Facebook experience.</p>
             <div><img src="includes/img/feature_check.png"> Hide <b>Sponsored Posts</b></div>
             <div><img src="includes/img/feature_check.png"> Auto-switch to the <b>Most Recent</b> news feed</div>
@@ -195,17 +190,16 @@
         <h4>Thank You!</h4>
         <div class="container">
             <div class="row" style="margin-top:30px;">
-                <div class="span2"></div>
-                <div class="span2">
+                <div class="col">
                     <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=9627367" target="_blank"><img border="0" src="https://matt-kruse.github.io/socialfixerdata/paypal_pay.gif"></a>
                 </div>
-                <div class="span2">
+                <div class="col">
                     <a href="https://www.gofundme.com/SocialFixer" target="_blank"><img src="https://matt-kruse.github.io/socialfixerdata/badge_gofundme.png" border="0"></a>
                 </div>
-                <div class="span2">
+                <div class="col">
                     <a href="https://www.patreon.com/SocialFixer" target="_blank"><img src="https://matt-kruse.github.io/socialfixerdata/badge_patreon.png" border="0"></a>
                 </div>
-                <div class="span2">
+                <div class="col">
                     <a href="bitcoin:15mrXfBXFDoyEr54upsnsF5tMvfo1N5WUA"><img title="Bitcoin" src="https://matt-kruse.github.io/socialfixerdata/bitcoin_pay.gif" border="0" style="margin-bottom:2px;"></a>
                 </div>
 
