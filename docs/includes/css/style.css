@@ -122,9 +122,6 @@ body, button, input, label, select, td, textarea{
 	}
 }
 @media (max-width: 767px) {
-	body{
-		min-width:643px;
-	}
 	.hero-unit{
 		border-radius:6px 6px 6px 6px;
 	}
