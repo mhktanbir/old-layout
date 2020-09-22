@@ -93,7 +93,7 @@ function rewriteUserAgentHeader(o) {
 api.webRequest.onBeforeSendHeaders.addListener(
   rewriteUserAgentHeader,
   {urls: ["*://*.facebook.com/*"]},
-  ["blocking", "requestHeaders"]
+  ["blocking", "requestHeaders", "extraHeaders"]
 );
 
 function getStatus() {
