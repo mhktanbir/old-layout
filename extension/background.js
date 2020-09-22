@@ -1,6 +1,7 @@
 var userAgent = navigator.userAgent;
 // Default useragent to use
-var useragent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"; // Chrome
+var default_useragent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"; // Chrome
+var useragent;
 
 // Determine user's actual browser
 var agent = "chrome";
@@ -41,6 +42,9 @@ try {
 } catch (e) {
   // No match, no problem - the default will be used
 }
+if (!useragent) {
+  useragent = default_useragent;
+}
 
 var enabled = true;
 var api = typeof browser!="undefined" ? browser : chrome;
@@ -48,15 +52,20 @@ var api = typeof browser!="undefined" ? browser : chrome;
 // When installed or updated, point the user to info/instructions
 api.runtime.onInstalled.addListener(function(details){
   var version = "unknown";
+  var previousVersion = "1.0";
   try {
     version = api.runtime.getManifest().version;
+    previousVersion = details.previousVersion;
   }
   catch (e) { }
   if ("install"===details.reason) {
     api.tabs.create({url: "https://OldLayout.com/install.html?version="+version});
   }
   else if ("update"===details.reason) {
-    api.tabs.create({url: "https://OldLayout.com/update.html?version="+version});
+    if ("2.0"!==previousVersion) {
+      // Don't launch on update from 2.0 to 2.1 because it is a minor fix
+      api.tabs.create({url: "https://OldLayout.com/update.html?version=" + version});
+    }
   }
 });
 
