@@ -62,8 +62,8 @@ api.runtime.onInstalled.addListener(function(details){
     api.tabs.create({url: "https://OldLayout.com/install.html?version="+version});
   }
   else if ("update"===details.reason) {
-    if ("2.0"!==previousVersion) {
-      // Don't launch on update from 2.0 to 2.1 because it is a minor fix
+    if (!/2\./.test(previousVersion)) {
+      // Don't launch on update from 2.x to 2.x because it is a minor fix
       api.tabs.create({url: "https://OldLayout.com/update.html?version=" + version});
     }
   }
@@ -71,11 +71,7 @@ api.runtime.onInstalled.addListener(function(details){
 
 // Intercept requests and force them to use our custom user agent
 function rewriteUserAgentHeader(o) {
-  if (/\/ajax\//.test(o.url)) {
-    //console.log("Using default user agent for "+o.url);
-    return;
-  }
-  if (/\.js/.test(o.url)) {
+  if (/\/ajax\//.test(o.url) || /\.(js|png|gif|jpg|css)/.test(o.url)) {
     //console.log("Using default user agent for "+o.url);
     return;
   }
