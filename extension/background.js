@@ -86,10 +86,18 @@ function rewriteUserAgentHeader(o) {
 }
 
 // This is the API hook to intercept requests
+
+let sendHeadersOptions = ["blocking", "requestHeaders"];
+try {
+  if (api.webRequest.OnBeforeSendHeadersOptions.hasOwnProperty("EXTRA_HEADERS")) {
+    sendHeadersOptions.push("extraHeaders");
+  }
+} catch (e) { }
+
 api.webRequest.onBeforeSendHeaders.addListener(
   rewriteUserAgentHeader,
   {urls: ["*://*.facebook.com/*"]},
-  ["blocking", "requestHeaders", "extraHeaders"]
+  sendHeadersOptions
 );
 
 function getStatus() {

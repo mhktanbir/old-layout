@@ -106,9 +106,6 @@ body, button, input, label, select, td, textarea{
 	.cs-sidenav{
 		width:250px;
 	}
-	img{
-		Xwidth:70%;
-	}
 }
 @media (min-width: 768px) and (max-width: 979px) {
 	/* Enable use of floated navbar text */
@@ -132,9 +129,6 @@ body, button, input, label, select, td, textarea{
 		box-shadow: 0 3px 4px rgba(0,0,0,0.145);
 		position:static; top:0;width:auto;
 		padding-bottom:30px;
-	}
-	img{
-		Xwidth:80%;
 	}
 	.bg-light > div > div.span8{
 		padding:10px;
