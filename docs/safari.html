@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>How to get Facebook's Old Layout using Safari</title>
+    <meta property="og:title" content="How to get Facebook's Old Layout using Safari" />
+    <meta property="og:description" content="This solution for Safari works around its lack of web extension API support!" />
+    <meta property="og:image" content="https://oldlayout.com/share-safari.jpg"/>
+    <meta property="og:url" content="https://oldlayout.com"/>
+    <meta property="og:type" content="website"/>
+
+    <link rel="shortcut icon" href="https://OldLayout.com/favicon.png" />
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="includes/css/style.css" rel="stylesheet">
+    <script src="includes/js/jquery.js"></script>
+    <style>
+        body { background-color: #9EADCA; }
+        .container-pad { margin-top:30px;}
+        .container-pad h3 { margin:20px 0 40px 0; }
+    </style>
+</head>
+<body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=299200640207895" nonce="VgtEPauD"></script>
+
+<!-- Begin page content -->
+<div class='container'>
+    <div class='row text-center'>
+        <div class="col">
+            <h3>How to get Facebook's Old Layout using Safari</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>The <a href="/">Old Layout for Facebook</a> extension works for Chrome, Firefox, Edge, and Opera and makes it easy to switch back to the old layout.</p>
+            <p>But Safari <a href="https://developer.apple.com/documentation/safariservices/safari_web_extensions/assessing_your_safari_web_extension_s_browser_compatibility">lacks support for the webRequestBlocking API</a>, which is required to make the Old Layout extension work.</p>
+            <p>So, Old Layout won't work in Safari... but there is a manual work-around!</p>
+            <p><b>1. Navigate to <a href="https://Facebook.com" target="_blank">Facebook</a> in Safari</b></p>
+            <p><b>2. Go into Safari -> Preferences -> Advanced</b></p>
+            <div><img src="safari-preferences.png"></div>
+            <p>Click the checkbox to Show Develop menu in the menu bar, then close Preferences.</p>
+            <p><b>3. Go into Develop -> User Agent -> Other</b></p>
+            <div><img src="safari-user-agent.png"></div>
+            <p><b>4. Paste the value below into the box and click OK</b></p>
+            <p style="font-weight:bold;color:red;font-family:monospace;font-size:150%;">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36</p>
+            <div><img src="safari-custom-user-agent.png"></div>
+            <p>Facebook should reload and show the old layout!</p>
+            <p><b>5. Ignore the Warning</b></p>
+            <div><img src="safari-warning.png"></div>
+            <p>The warning above will display while you are using the Old Layout. Unfortunately this is unavoidable without more work, so it's best to just leave it there and ignore it.</p>
+        </div>
+    </div>
+    <div class='row text-center' style="margin-top:50px;border:3px solid black;padding:20px;color:white;font-size:150%;">
+        <div class="col">
+            <p>Please share OldLayout with others! The site has a solution for all major browsers. Many people hate Facebook's new layout and need to know that there is a solution!</p>
+            <div class="fb-share-button" data-href="https://OldLayout.com" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2FOldLayout.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+        </div>
+    </div>
+</div>
+
+<div class='container container-pad'>
+    <div class='row text-center'>
+        <div class="col">
+            <h3>Please donate to support development and maintenance!</h3>
+            <p>I'm an independent software developer, and I hope I've made your life better with this extension.</p>
+            <p>Please consider donating $5 or $10 or <span style="text-decoration:underline;">any</span> amount you wish to support me as I write software for the Facebook community. Thank you!</p>
+            <div class="container">
+                <div class="row" style="margin-top:30px;">
+                    <div class="col">
+                        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=9627367" target="_blank"><img border="0" src="https://matt-kruse.github.io/socialfixerdata/paypal_pay.gif"></a>
+                    </div>
+                    <div class="col">
+                        <a href="https://www.gofundme.com/SocialFixer" target="_blank"><img src="https://matt-kruse.github.io/socialfixerdata/badge_gofundme.png" border="0"></a>
+                    </div>
+                    <div class="col">
+                        <a href="https://www.patreon.com/SocialFixer" target="_blank"><img src="https://matt-kruse.github.io/socialfixerdata/badge_patreon.png" border="0"></a>
+                    </div>
+                    <div class="col">
+                        <a href="bitcoin:15mrXfBXFDoyEr54upsnsF5tMvfo1N5WUA"><img title="Bitcoin" src="https://matt-kruse.github.io/socialfixerdata/bitcoin_pay.gif" border="0" style="margin-bottom:2px;"></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

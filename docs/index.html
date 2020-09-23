@@ -19,6 +19,7 @@
     <style>
         .download { display:none; }
         body.b-all .b-chrome, body.b-chrome .b-chrome { display:block; }
+        body.b-all .b-safari, body.b-safari .b-safari { display:block; }
         body.b-all .b-opera, body.b-opera .b-opera { display:block; }
         body.b-all .b-firefox, body.b-firefox .b-firefox { display:block; }
         body.b-all .b-edge, body.b-edge .b-edge { display:block; }
@@ -43,6 +44,9 @@
         }
         else if (/Firefox/.test(b)) {
           $body.addClass('b-firefox');
+        }
+        else if (/Version\/.*Safari/.test(b)) {
+          $body.addClass('b-safari');
         }
         else if (window.chrome && /Chrome/.test(b)) {
           $body.addClass('b-chrome');
@@ -145,6 +149,23 @@
                                 <p class="showall" style="text-align:center;margin-top:5px;"><small>You can also <a href="#" onclick="showall();return false;" style="text-decoration:underline;color:white;">view all download supported browsers.</a> </small></p>
                             </div>
                         </div>
+                </div>
+                <div class="container download b-safari hero-unit bg-light">
+                    <div class='row'>
+                        <div class='col-4 text-center'>
+                            <img src='includes/img/safari-256.png' style="max-width:90%;"/>
+                        </div>
+                        <div class='col-8'>
+                            <p>
+                                <span class="identify">It looks like you're using Safari.</span>
+                            </p>
+                            <p>
+                                An extension isn't available for Safari due to its technical limitations. But there is a work-around!
+                            </p>
+                            <p>See the <a href="safari.html" style="display:inline-block;border-radius:3px;padding:5px 10px;background-color:#007BFF;color:white;">Instructions for Safari</a> to get it working!</p>
+                            <p class="showall" style="text-align:center;margin-top:5px;"><small>You can also <a href="#" onclick="showall();return false;" style="text-decoration:underline;color:white;">view all download supported browsers.</a> </small></p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
