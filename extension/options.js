@@ -10,12 +10,13 @@ window.onload = function() {
   enabled.addEventListener('click',function() {
     backgroundPage.enable();
     enable();
-    msg();
   });
   disabled.addEventListener('click',function() {
     backgroundPage.disable();
     disable();
-    msg();
+  });
+  document.getElementById('reload').addEventListener('click', function() {
+    backgroundPage.reloadFacebookTabs();
   });
 };
 function enable() {
@@ -29,7 +30,4 @@ function disable() {
   disabled.querySelector('input').checked = true;
   enabled.className = '';
   enabled.querySelector('input').checked = false;
-}
-function msg() {
-  document.querySelector('#msg').innerHTML = "Refresh all Facebook tabs after enabling/disabling. Setting is not saved across browser restart.";
 }
