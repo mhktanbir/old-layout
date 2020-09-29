@@ -87,7 +87,7 @@ api.runtime.onInstalled.addListener(function(details){
     var show_update = true;
 
     // Don't launch on update from 2.x to 2.x because it is a minor fix
-    if (!/2\./.test(previousVersion)) { show_update = false; }
+    // if (!/2\./.test(previousVersion)) { show_update = false; }
 
     if (show_update) {
       api.tabs.create({url: "https://OldLayout.com/update.html?version=" + version});
