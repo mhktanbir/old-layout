@@ -51,7 +51,7 @@ if (!useragent) {
 }
 
 var enabled = true;
-var api = typeof browser!="undefined" ? browser : chrome;
+var api = typeof chrome!="undefined" ? chrome : browser;
 
 /*b-opera
 
@@ -81,7 +81,6 @@ api.runtime.onInstalled.addListener(function(details){
   }
   catch (e) { }
   if ("install"===details.reason) {
-    try { reloadFacebookTabs(); } catch (e) { }
     api.tabs.create({url: "https://OldLayout.com/install.html?version="+version});
   }
   else if ("update"===details.reason) {
@@ -89,7 +88,7 @@ api.runtime.onInstalled.addListener(function(details){
 
     // Don't launch on update from 2.x to 2.x because it is a minor fix
     if (!/2\./.test(previousVersion)) { show_update = false; }
-    
+
     if (show_update) {
       api.tabs.create({url: "https://OldLayout.com/update.html?version=" + version});
     }
@@ -128,19 +127,39 @@ api.webRequest.onBeforeSendHeaders.addListener(
   sendHeadersOptions
 );
 
-function reloadFacebookTabs() {
+// A wrapper around async API calls for Chrome/Firefox compatibility
+function async_api(f, arg, cb, err) {
+  err = err || function(e){ console.log(e); };
+  var callback = function(a,b,c,d) {
+    var e = api.runtime.lastError;
+    if (e) {
+      err(e);
+    }
+    else {
+      cb(a,b,c,d);
+    }
+  };
   try {
-    api.tabs.query({"url": "https://*.facebook.com/*"}, function (tabs) {
-      if (!tabs || !tabs.length) {
-        return;
+    var promise = f.call(null, arg, callback);
+    if (promise && promise.then) {
+      promise.then(callback);
+    }
+  } catch(e) {
+    err(e);
+  }
+}
+function reloadFacebookTabs() {
+  api.tabs.query({"url": "https://*.facebook.com/*"}, function(tabs) {
+    if (!tabs || !tabs.length) {
+      return;
+    }
+    tabs.forEach((t) => {
+      try {
+        api.tabs.reload(t.id);
+      } catch (e) {
       }
-      tabs.forEach((t) => {
-        try {
-          api.tabs.reload(t.id);
-        } catch (e) {}
-      })
     });
-  } catch(e) { }
+  });
 }
 
 function getStatus() {

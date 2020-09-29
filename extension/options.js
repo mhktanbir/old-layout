@@ -1,10 +1,11 @@
 var enabled = null;
 var disabled = null;
+var requires_permissions = (/Firefox/.test(navigator.userAgent));
 window.onload = function() {
   enabled = document.querySelector('#enabled');
   disabled = document.querySelector('#disabled');
-  var browser = browser || chrome;
-  var backgroundPage = browser.extension.getBackgroundPage();
+  var api = chrome || browser;
+  var backgroundPage = api.extension.getBackgroundPage();
   var status = backgroundPage.getStatus();
   status ? enable() : disable();
   enabled.addEventListener('click',function() {
@@ -16,7 +17,16 @@ window.onload = function() {
     disable();
   });
   document.getElementById('reload').addEventListener('click', function() {
-    backgroundPage.reloadFacebookTabs();
+    if (requires_permissions) {
+      api.permissions.request({"permissions": ["tabs"]}, function (granted) {
+        if (granted) {
+          backgroundPage.reloadFacebookTabs()
+        }
+      });
+    }
+    else {
+      backgroundPage.reloadFacebookTabs();
+    }
   });
 };
 function enable() {
